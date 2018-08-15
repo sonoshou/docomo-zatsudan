@@ -49,8 +49,7 @@ class DocomoZatsudan:
         # jsonの解析
         response = data['systemText']['expression']
 
-        # 表示
-        print("response: %s" %(response))
+        return response
 
     def set_option(self, sex="", t=""):
         self.option = {'option': {'sex':sex, 't':t}}
@@ -65,6 +64,6 @@ if __name__ == '__main__':
         # 会話の入力
         user_input = input('>> ')
         if user_input is not '':
-            docomo_zatsudan.chat(user_input)
+            print("response: %s" %(docomo_zatsudan.chat(user_input)))
         else:
             exit()
